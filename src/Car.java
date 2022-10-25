@@ -6,14 +6,12 @@ public class Car {
     int productionYear;
     String productionCountry;
 
-
        void getInfo() {
         System.out.println(brand + model +
                 ", сбока в " + productionCountry +
                 ", в " + productionYear + " году, "
                 + color + " цвет кузова, " +
                 "объем - " + engineVolume + " л.");
-
     }
 
 }

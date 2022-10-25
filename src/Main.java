@@ -46,9 +46,8 @@ public class Main {
         car2.color = "оранжевый";
         car2.engineVolume = 1.6;
         car2.getInfo();
-
-            }
-        }
+    }
+}
 
 
 
