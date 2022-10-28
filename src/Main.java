@@ -1,5 +1,7 @@
 import transport.Car;
 
+import java.time.LocalDate;
+
 public class Main {
     public static void main(String[] args) {
         Car car1 = new Car(
@@ -22,6 +24,7 @@ public class Main {
                 3.0);
         car2.setRegNumber("х050jх098");
         car2.setSummerTyres(false);
+        car2.setKey(new Car.Key(true,true));
         car2.getInfo();
 
         Car car3 = new Car(
@@ -32,6 +35,9 @@ public class Main {
                 "",
                 3.0);
         car3.setRegNumber("х870хk050");
+        car3.setInsurance(new Car.Insurance(LocalDate.now(),30_000,"123456"));
+        car3.getInsurance().checkExpireDate();
+        car3.getInsurance().checkNumber();
         car3.getInfo();
 
         Car car4 = new Car(
@@ -55,7 +61,9 @@ public class Main {
                 "минивэн",
                 null,
                 5,
-                true);
+                true,
+                new Car.Key(),
+                new Car.Insurance());
         car5.getInfo();
     }
 }
