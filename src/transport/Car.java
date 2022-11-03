@@ -2,14 +2,9 @@ package transport;
 
 import java.time.LocalDate;
 
-public class Car {
-    private final String brand;
-    private final String model;
-    private double engineVolume;
-    private String color;
-    private final int productionYear;
-    private final String productionCountry;
-    private String gear;
+public class Car extends Transport {
+   private double engineVolume;
+   private String gear;
     private final String typeOfBody;
     private String regNumber;
     private final int seatsCount;
@@ -17,11 +12,13 @@ public class Car {
     private Key key;
     private Insurance insurance;
 
-    public Car(String brand,
-               String model,
-               String productionCountry,
-               int productionYear,
-               String color,
+    public Car(
+            String brand,
+            String model,
+            int productionYear,
+            String productionCountry,
+            String color,
+            double maxSpeed,
                double engineVolume,
                String gear,
                String typeOfBody,
@@ -31,31 +28,8 @@ public class Car {
                Key key,
                Insurance insurance
     ) {
-        if (brand == null || brand.isEmpty()) {
-            this.brand = "default";
-        } else {
-            this.brand = brand;
-        }
-        if (model == null || model.isEmpty()) {
-            this.model = "default";
-        } else {
-            this.model = model;
-        }
-        if (productionCountry == null || productionCountry.isEmpty()) {
-            this.productionCountry = "default";
-        } else {
-            this.productionCountry = productionCountry;
-        }
-        if (productionYear <= 0) {
-            this.productionYear = 2000;
-        } else {
-            this.productionYear = productionYear;
-        }
-        if (color == null || color.isEmpty()) {
-            this.color = "белый";
-        } else {
-            this.color = color;
-        }
+        super(brand, model, productionYear, productionCountry, color, maxSpeed);
+
         if (engineVolume <= 0) {
             this.engineVolume = 1.5;
         } else {
@@ -93,16 +67,12 @@ public class Car {
 
     public Car(String brand,
                String model,
-               String productionCountry,
                int productionYear,
+               String productionCountry,
                String color,
+               double maxSpeed,
                double engineVolume) {
-        this(brand,
-                model,
-                productionCountry,
-                productionYear,
-                color,
-                engineVolume,
+        this( brand, model, productionYear, productionCountry, color, maxSpeed, engineVolume,
                 "МКПП",
                 "седан",
                 "х000хх000",
@@ -130,21 +100,21 @@ public class Car {
                 ", срок действия страховки " + getInsurance().getExpireDate());
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public int getProductionYear() {
-        return productionYear;
-    }
-
-    public String getProductionCountry() {
-        return productionCountry;
-    }
+//    public String getBrand() {
+//        return brand;
+//    }
+//
+//    public String getModel() {
+//        return model;
+//    }
+//
+//    public int getProductionYear() {
+//        return productionYear;
+//    }
+//
+//    public String getProductionCountry() {
+//        return productionCountry;
+//    }
 
     public String getTypeOfBody() {
         return typeOfBody;
@@ -162,13 +132,13 @@ public class Car {
         this.engineVolume = engineVolume;
     }
 
-    public String getColor() {
-        return color;
-    }
+//    public String getColor() {
+//        return color;
+//    }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
+//    public void setColor(String color) {
+//        this.color = color;
+//    }
 
     public String getGear() {
         return gear;
