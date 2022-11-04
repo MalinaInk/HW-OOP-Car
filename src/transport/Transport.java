@@ -1,6 +1,6 @@
 package transport;
 
-public class Transport {
+public abstract class Transport {
     private String brand;
     private String model;
     private int productionYear;
@@ -37,6 +37,8 @@ public class Transport {
         }
     }
 
+    public abstract void refill();
+
     public String getBrand() {
         return brand;
     }
@@ -71,9 +73,17 @@ public class Transport {
 
     public void setMaxSpeed(double maxSpeed) {
         if (maxSpeed == 0) {
-            System.out.println(" не указана.");
+            System.out.println("Максимальная скорость не указана.");
         } else {
             this.maxSpeed = maxSpeed;
         }
+    }
+
+    @Override
+    public String toString() {
+        return " марка " + getBrand() + ", модель " + getModel() +
+                ", выпущен в " + getProductionYear() + " году в стране " +
+                getProductionCountry() + ", цвет " + getColor() +
+                ", максимальная скорость " + getMaxSpeed();
     }
 }

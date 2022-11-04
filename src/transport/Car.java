@@ -80,11 +80,11 @@ public class Car extends Transport {
                 true,
                 new Key(),
                 new Insurance());
-        }
+                }
 
     public void getInfo() {
         System.out.println(getBrand() + " " + getModel() +
-                ", сбока в " + getProductionCountry() +
+                ", сборка в " + getProductionCountry() +
                 ", в " + getProductionYear() + " году, "
                 + getColor() + " цвет кузова, " + getColor() +
                 " объем - " + getEngineVolume() + " л." +
@@ -100,21 +100,9 @@ public class Car extends Transport {
                 ", срок действия страховки " + getInsurance().getExpireDate());
     }
 
-//    public String getBrand() {
-//        return brand;
-//    }
-//
-//    public String getModel() {
-//        return model;
-//    }
-//
-//    public int getProductionYear() {
-//        return productionYear;
-//    }
-//
-//    public String getProductionCountry() {
-//        return productionCountry;
-//    }
+    public void refill() {
+        System.out.println("ТС заправлять бензином, дизелем на заправке или на электропарковке.");
+    }
 
     public String getTypeOfBody() {
         return typeOfBody;
@@ -131,14 +119,6 @@ public class Car extends Transport {
     public void setEngineVolume(double engineVolume) {
         this.engineVolume = engineVolume;
     }
-
-//    public String getColor() {
-//        return color;
-//    }
-
-//    public void setColor(String color) {
-//        this.color = color;
-//    }
 
     public String getGear() {
         return gear;
